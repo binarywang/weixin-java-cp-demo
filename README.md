@@ -1,5 +1,4 @@
-### 本Demo基于Spring Boot构建，实现微信企业号开发功能。
-## 本项目为weixin-java-tools的Demo演示程序，更多信息请查阅：https://github.com/Wechat-Group/weixin-java-tools
+### 本项目为weixin-java-tools的Demo演示程序，基于Spring Boot构建，实现微信企业号开发功能。更多信息请查阅：https://github.com/Wechat-Group/weixin-java-tools
 
 [![Build Status](https://travis-ci.org/Wechat-Group/weixin-java-cp-demo.svg?branch=master)](https://travis-ci.org/Wechat-Group/weixin-java-cp-demo)
 -----------------------
