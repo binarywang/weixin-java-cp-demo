@@ -1,9 +1,9 @@
 package com.github.binarywang.demo.wechat.controller;
 
-import me.chanjar.weixin.cp.api.WxCpMessageRouter;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
+import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

@@ -1,6 +1,6 @@
 package com.github.binarywang.demo.wechat.handler;
 
-import me.chanjar.weixin.cp.api.WxCpMessageHandler;
+import me.chanjar.weixin.cp.message.WxCpMessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

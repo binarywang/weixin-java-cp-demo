@@ -25,7 +25,7 @@ public class SubscribeHandler extends AbstractHandler {
         this.logger.info("新关注用户 OPENID: " + wxMessage.getFromUserName());
 
         // 获取微信用户基本信息
-        WxCpUser userWxInfo = weixinService.userGet(wxMessage.getFromUserName());
+        WxCpUser userWxInfo = weixinService.getUserService().getById(wxMessage.getFromUserName());
 
         if (userWxInfo != null) {
             // TODO 可以添加关注用户到本地

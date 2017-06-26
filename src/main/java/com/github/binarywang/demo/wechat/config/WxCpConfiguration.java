@@ -2,10 +2,10 @@ package com.github.binarywang.demo.wechat.config;
 
 import com.github.binarywang.demo.wechat.handler.*;
 import me.chanjar.weixin.common.api.WxConsts;
-import me.chanjar.weixin.cp.api.WxCpConfigStorage;
-import me.chanjar.weixin.cp.api.WxCpInMemoryConfigStorage;
-import me.chanjar.weixin.cp.api.WxCpMessageRouter;
 import me.chanjar.weixin.cp.api.WxCpService;
+import me.chanjar.weixin.cp.config.WxCpConfigStorage;
+import me.chanjar.weixin.cp.config.WxCpInMemoryConfigStorage;
+import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
