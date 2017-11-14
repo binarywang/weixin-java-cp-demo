@@ -17,20 +17,20 @@ import java.util.Map;
 @Component
 public class MsgHandler extends AbstractHandler {
 
-    @Override
-    public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage,
-                                    Map<String, Object> context, WxCpService weixinService,
-                                    WxSessionManager sessionManager) {
+  @Override
+  public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage,
+                                  Map<String, Object> context, WxCpService weixinService,
+                                  WxSessionManager sessionManager) {
 
-        if (!wxMessage.getMsgType().equals(WxConsts.XML_MSG_EVENT)) {
-            //TODO 可以选择将消息保存到本地
-        }
-
-        //TODO 组装回复消息
-        String content = "收到信息内容：" + JsonUtils.toJson(wxMessage);
-
-        return new TextBuilder().build(content, wxMessage, weixinService);
-
+    if (!wxMessage.getMsgType().equals(WxConsts.XmlMsgType.EVENT)) {
+      //TODO 可以选择将消息保存到本地
     }
+
+    //TODO 组装回复消息
+    String content = "收到信息内容：" + JsonUtils.toJson(wxMessage);
+
+    return new TextBuilder().build(content, wxMessage, weixinService);
+
+  }
 
 }

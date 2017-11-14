@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WxCpDemoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(WxCpDemoApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(WxCpDemoApplication.class, args);
+  }
 }
