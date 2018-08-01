@@ -1,8 +1,8 @@
 logging:
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: INFO
     com.github.binarywang.demo.wx.cp: DEBUG
-
+    me.chanjar.weixin: DEBUG
 wechat:
   cp:
     corpId: 111
