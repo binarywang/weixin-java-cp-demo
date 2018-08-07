@@ -3,6 +3,8 @@ package com.github.binarywang.demo.wx.cp.controller;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorAttributes;
 import org.springframework.boot.autoconfigure.web.ErrorController;
@@ -15,14 +17,13 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @author Binary Wang(https://github.com/binarywang)
  */
-@Slf4j
 @Controller
 public class WxErrorController implements ErrorController {
+  private static final Logger log = LoggerFactory.getLogger(WxErrorController.class);
+
   private final static String ERROR_PATH = "/error";
   private static WxErrorController appErrorController;
 
