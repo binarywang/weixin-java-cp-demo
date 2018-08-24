@@ -1,15 +1,21 @@
 package com.github.binarywang.demo.wx.cp.controller;
 
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
 import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 /**
  * * @author Binary Wang(https://github.com/binarywang)
@@ -19,11 +25,15 @@ import org.springframework.web.bind.annotation.*;
 public class WxPortalController {
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-  @Autowired
   private WxCpService wxService;
 
-  @Autowired
   private WxCpMessageRouter router;
+
+  @Autowired
+  public WxPortalController(WxCpService wxService, WxCpMessageRouter router) {
+    this.wxService = wxService;
+    this.router = router;
+  }
 
   @GetMapping(produces = "text/plain;charset=utf-8")
   public String authGet(@RequestParam(name = "msg_signature", required = false) String signature,
