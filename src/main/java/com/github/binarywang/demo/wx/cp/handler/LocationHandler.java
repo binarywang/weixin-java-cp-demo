@@ -1,24 +1,24 @@
 package com.github.binarywang.demo.wx.cp.handler;
 
+import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
 import com.github.binarywang.demo.wx.cp.builder.TextBuilder;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
-import org.springframework.stereotype.Component;
-
-import java.util.Map;
 
 /**
- * * @author Binary Wang(https://github.com/binarywang)
+ *  @author Binary Wang(https://github.com/binarywang)
  */
 @Component
 public class LocationHandler extends AbstractHandler {
 
   @Override
-  public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage,
-                                  Map<String, Object> context, WxCpService WxCpService,
+  public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage, Map<String, Object> context, WxCpService cpService,
                                   WxSessionManager sessionManager) {
     if (wxMessage.getMsgType().equals(WxConsts.XmlMsgType.LOCATION)) {
       //TODO 接收处理用户发送的地理位置消息

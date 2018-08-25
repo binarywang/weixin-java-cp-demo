@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 /**
- * * @author Binary Wang(https://github.com/binarywang)
+ *  @author Binary Wang(https://github.com/binarywang)
  */
 public class JsonUtils {
   private static final ObjectMapper JSON = new ObjectMapper();

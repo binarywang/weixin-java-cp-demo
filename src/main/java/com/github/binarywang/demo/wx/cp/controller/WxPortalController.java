@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
@@ -18,7 +19,7 @@ import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 
 /**
- * * @author Binary Wang(https://github.com/binarywang)
+ *  @author Binary Wang(https://github.com/binarywang)
  */
 @RestController
 @RequestMapping("/wx/cp/portal")
@@ -64,7 +65,7 @@ public class WxPortalController {
 
     WxCpXmlMessage inMessage = WxCpXmlMessage.fromEncryptedXml(requestBody, this.wxService.getWxCpConfigStorage(),
         timestamp, nonce, signature);
-    this.logger.debug("\n消息解密后内容为：\n{} ", inMessage.toString());
+    this.logger.debug("\n消息解密后内容为：\n{} ", JsonUtils.toJson(inMessage));
     WxCpXmlOutMessage outMessage = this.route(inMessage);
     if (outMessage == null) {
       return "";

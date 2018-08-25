@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * * @author Binary Wang(https://github.com/binarywang)
+ *  @author Binary Wang(https://github.com/binarywang)
  */
 @Getter
 @Setter
