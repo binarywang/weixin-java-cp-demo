@@ -5,9 +5,24 @@
 -----------------------
 
 ## 使用步骤：
-1. 配置：复制 `/src/main/resources/application.yml.template` 或者修改其扩展名生成 `application.yml` 文件，根据自己需要填写相关配置（需要注意的是：yml文件内的属性冒号后面的文字之前需要加空格，可参考已有配置，否则属性会设置不成功）；	
-1. 运行Java程序：`WxCpDemoApplication`；
-1. 打开shell或cmd，进入ngrok目录，运行 `ngrok -config ngrok.cfg -subdomain my-domain 8080` 如果运行失败，请更换my-domain为其它字符串，直至连接成功；
-1. 配置企业微信对应应用中的“接受消息”部分的“接收消息服务器配置”URL地址：http://my-domain.tunnel.qydev.com/wx/cp/portal （注意my-domain要跟上面的一致，需要符合微信官方的要求）；
-1. 根据自己需要修改各个handler的实现，加入自己的业务逻辑。
+1. 配置：复制 `/src/main/resources/application.yml.template` 或者修改其扩展名生成 `application.yml` 文件，根据自己需要填写相关配置（需要注意的是：yml文件内的属性冒号后面的文字之前需要加空格，可参考已有配置，否则属性会设置不成功）；
+2. 主要配置说明如下：（	注意：如果是要配置通讯录同步的应用，agentId可以随便配置一个，保证跟下面服务器URL地址里的一致即可。）
+```
+wechat:
+  cp:
+    corpId: 111 （企业ID 在此页面查看：https://work.weixin.qq.com/wework_admin/frame#profile）
+    appConfigs:
+      - agentId: 1000001 （某一具体应用的AgentId）
+        secret: 1111（该应用的Secret）
+        token: 111 （应用中的“接受消息”部分的“接收消息服务器配置”里的Token值）
+        aesKey: 111 （应用中的“接受消息”部分的“接收消息服务器配置”里的EncodingAESKey值）
+      - agentId: 1000002 （另一个应用，以下同上）
+        secret: 1111
+        token: 111
+        aesKey: 111
+```
+3. 运行Java程序：`WxCpDemoApplication`；
+4. 打开shell或cmd，进入ngrok目录，运行 `ngrok -config ngrok.cfg -subdomain my-domain 8080` 如果运行失败，请更换my-domain为其它字符串，直至连接成功；
+5. 配置企业微信对应应用中的“接受消息”部分的“接收消息服务器配置”URL地址：http://my-domain.tunnel.qydev.com/wx/cp/portal/xxxxx （xxxx要跟AgentId保持一致，注意my-domain要跟上面的一致，需要符合微信官方的要求）；
+6. 根据自己需要修改各个handler的实现，加入自己的业务逻辑。
 	

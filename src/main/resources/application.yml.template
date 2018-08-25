@@ -6,7 +6,14 @@ logging:
 wechat:
   cp:
     corpId: 111
-    secret: 111
-    token: 111
-    aesKey: 111
-    agentId: 111
+    appConfigs:
+      - agentId: 1000001
+        secret: 1111
+        token: 111
+        aesKey: 111
+      - agentId: 1000002
+        secret: 1111
+        token: 111
+        aesKey: 111
+server:
+  port: 8000
