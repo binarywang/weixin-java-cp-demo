@@ -18,7 +18,7 @@
     <description>Spring Boot Demo with wechat CP</description>
 
     <properties>
-        <weixin-java-cp.version>3.1.7.BETA</weixin-java-cp.version>
+        <weixin-java-cp.version>3.2.0</weixin-java-cp.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
