@@ -7,6 +7,7 @@
 更多信息请查阅：https://github.com/Wechat-Group/weixin-java-tools
 
 ## 使用步骤：
+1. 请注意，本demo为简化代码编译时加入了lombok支持，如果不了解lombok的话，请先学习下相关知识，比如可以阅读[此文章](https://mp.weixin.qq.com/s/cUc-bUcprycADfNepnSwZQ)；
 1. 配置：复制 `/src/main/resources/application.yml.template` 或者修改其扩展名生成 `application.yml` 文件，根据自己需要填写相关配置（需要注意的是：yml文件内的属性冒号后面的文字之前需要加空格，可参考已有配置，否则属性会设置不成功）；
 2. 主要配置说明如下：（	注意：如果是要配置通讯录同步的应用，agentId可以随便配置一个，保证跟下面服务器URL地址里的一致即可。）
 ```
