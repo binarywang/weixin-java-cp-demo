@@ -64,8 +64,16 @@ public class WxCpConfiguration {
         return routers;
     }
 
+    public static WxCpMessageRouter getRouter(Integer agentId) {
+        return routers.get(agentId);
+    }
+
     public static Map<Integer, WxCpService> getCpServices() {
         return cpServices;
+    }
+
+    public static WxCpService getCpService(Integer agentId) {
+        return cpServices.get(agentId);
     }
 
     @Bean

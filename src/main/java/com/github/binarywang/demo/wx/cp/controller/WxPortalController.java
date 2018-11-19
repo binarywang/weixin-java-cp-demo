@@ -39,7 +39,7 @@ public class WxPortalController {
       throw new IllegalArgumentException("请求参数非法，请核实!");
     }
 
-    final WxCpService wxCpService = WxCpConfiguration.getCpServices().get(agentId);
+    final WxCpService wxCpService = WxCpConfiguration.getCpService(agentId);
     if (wxCpService == null) {
       throw new IllegalArgumentException(String.format("未找到对应agentId=[%d]的配置，请核实！", agentId));
     }
@@ -60,7 +60,7 @@ public class WxPortalController {
     this.logger.info("\n接收微信请求：[signature=[{}], timestamp=[{}], nonce=[{}], requestBody=[\n{}\n] ",
         signature, timestamp, nonce, requestBody);
 
-    final WxCpService wxCpService = WxCpConfiguration.getCpServices().get(agentId);
+    final WxCpService wxCpService = WxCpConfiguration.getCpService(agentId);
     WxCpXmlMessage inMessage = WxCpXmlMessage.fromEncryptedXml(requestBody, wxCpService.getWxCpConfigStorage(),
         timestamp, nonce, signature);
     this.logger.debug("\n消息解密后内容为：\n{} ", JsonUtils.toJson(inMessage));
