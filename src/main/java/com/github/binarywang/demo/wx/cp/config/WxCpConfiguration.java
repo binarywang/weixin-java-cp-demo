@@ -18,6 +18,7 @@ import com.github.binarywang.demo.wx.cp.handler.NullHandler;
 import com.github.binarywang.demo.wx.cp.handler.SubscribeHandler;
 import com.github.binarywang.demo.wx.cp.handler.UnsubscribeHandler;
 import com.google.common.collect.Maps;
+import lombok.val;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.cp.WxCpConsts;
 import me.chanjar.weixin.cp.api.WxCpService;
@@ -70,13 +71,13 @@ public class WxCpConfiguration {
     @Bean
     public Object wxCpServices() {
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
-            WxCpInMemoryConfigStorage configStorage = new WxCpInMemoryConfigStorage();
+            val configStorage = new WxCpInMemoryConfigStorage();
             configStorage.setCorpId(this.properties.getCorpId());
             configStorage.setAgentId(a.getAgentId());
             configStorage.setCorpSecret(a.getSecret());
             configStorage.setToken(a.getToken());
             configStorage.setAesKey(a.getAesKey());
-            WxCpService service = new WxCpServiceImpl();
+            val service = new WxCpServiceImpl();
             service.setWxCpConfigStorage(configStorage);
             routers.put(a.getAgentId(), this.newRouter(service));
             return service;
@@ -86,7 +87,7 @@ public class WxCpConfiguration {
     }
 
     private WxCpMessageRouter newRouter(WxCpService wxCpService) {
-        final WxCpMessageRouter newRouter = new WxCpMessageRouter(wxCpService);
+        final val newRouter = new WxCpMessageRouter(wxCpService);
 
         // 记录所有事件的日志 （异步执行）
         newRouter.rule().handler(this.logHandler).next();
