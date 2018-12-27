@@ -26,7 +26,6 @@ wechat:
         aesKey: 111
 ```
 3. 运行Java程序：`WxCpDemoApplication`；
-4. 打开shell或cmd，进入ngrok目录，运行 `ngrok -config ngrok.cfg -subdomain my-domain 8080` 如果运行失败，请更换my-domain为其它字符串，直至连接成功；
-5. 配置企业微信对应应用中的“接受消息”部分的“接收消息服务器配置”URL地址：http://my-domain.tunnel.qydev.com/wx/cp/portal/xxxxx （xxxx要跟AgentId保持一致，注意my-domain要跟上面的一致，需要符合微信官方的要求）；
+4. 配置企业微信对应应用中的“接受消息”部分的“接收消息服务器配置”URL地址：http://可外网访问的域名/wx/cp/portal/xxxxx （xxxx要跟AgentId保持一致，注意my-domain要跟上面的一致，需要符合微信官方的要求）；
 6. 根据自己需要修改各个handler的实现，加入自己的业务逻辑。
 	
