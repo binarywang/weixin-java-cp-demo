@@ -2,10 +2,10 @@ package com.github.binarywang.demo.wx.cp.config;
 
 import java.util.Map;
 import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.github.binarywang.demo.wx.cp.handler.ContactChangeHandler;
@@ -64,20 +64,12 @@ public class WxCpConfiguration {
         return routers;
     }
 
-    public static WxCpMessageRouter getRouter(Integer agentId) {
-        return routers.get(agentId);
-    }
-
-    public static Map<Integer, WxCpService> getCpServices() {
-        return cpServices;
-    }
-
     public static WxCpService getCpService(Integer agentId) {
         return cpServices.get(agentId);
     }
 
-    @Bean
-    public Object wxCpServices() {
+    @PostConstruct
+    public void initServices() {
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
             val configStorage = new WxCpInMemoryConfigStorage();
             configStorage.setCorpId(this.properties.getCorpId());
@@ -90,8 +82,6 @@ public class WxCpConfiguration {
             routers.put(a.getAgentId(), this.newRouter(service));
             return service;
         }).collect(Collectors.toMap(service -> service.getWxCpConfigStorage().getAgentId(), a -> a));
-
-        return Boolean.TRUE;
     }
 
     private WxCpMessageRouter newRouter(WxCpService wxCpService) {
