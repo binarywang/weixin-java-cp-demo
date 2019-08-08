@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/binarywang/weixin-java-cp-demo.svg?branch=master)](https://travis-ci.org/binarywang/weixin-java-cp-demo)
 -----------------------
 
-### 本项目为`WxJava`的Demo演示程序，基于 `Spring Boot` 构建，实现企业微信后端开发功能。
+### 本项目为 `WxJava` 的 Demo 演示程序，基于 `Spring Boot` 构建，实现企业微信后端开发功能。
 更多信息请查阅：https://github.com/Wechat-Group/WxJava
 
 ## 使用步骤：
