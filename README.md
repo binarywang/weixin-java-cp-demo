@@ -16,7 +16,7 @@ wechat:
   cp:
     corpId: 111 （企业ID 在此页面查看：https://work.weixin.qq.com/wework_admin/frame#profile）
     appConfigs:
-      - agentId: 1000001 （某一具体应用的AgentId）
+      - agentId: 1000001 （某一具体应用的AgentId，如果是要配置通讯录同步的应用，可以随便配置一个）
         secret: 1111（该应用的Secret）
         token: 111 （应用中的 “接受消息” 部分的 “接收消息服务器配置” 里的Token值）
         aesKey: 111 （应用中的 “接受消息” 部分的 “接收消息服务器配置” 里的EncodingAESKey值）
