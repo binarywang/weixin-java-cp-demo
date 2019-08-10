@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 
+import me.chanjar.weixin.cp.config.impl.WxCpDefaultConfigImpl;
+import me.chanjar.weixin.cp.constant.WxCpConsts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -20,10 +22,8 @@ import com.github.binarywang.demo.wx.cp.handler.UnsubscribeHandler;
 import com.google.common.collect.Maps;
 import lombok.val;
 import me.chanjar.weixin.common.api.WxConsts;
-import me.chanjar.weixin.cp.WxCpConsts;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.api.impl.WxCpServiceImpl;
-import me.chanjar.weixin.cp.config.WxCpInMemoryConfigStorage;
 import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 
 /**
@@ -71,7 +71,7 @@ public class WxCpConfiguration {
     @PostConstruct
     public void initServices() {
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
-            val configStorage = new WxCpInMemoryConfigStorage();
+            val configStorage = new WxCpDefaultConfigImpl();
             configStorage.setCorpId(this.properties.getCorpId());
             configStorage.setAgentId(a.getAgentId());
             configStorage.setCorpSecret(a.getSecret());
