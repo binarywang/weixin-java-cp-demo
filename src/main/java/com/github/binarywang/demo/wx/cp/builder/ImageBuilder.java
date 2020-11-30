@@ -1,9 +1,9 @@
 package com.github.binarywang.demo.wx.cp.builder;
 
 import me.chanjar.weixin.cp.api.WxCpService;
-import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
-import me.chanjar.weixin.cp.bean.WxCpXmlOutImageMessage;
-import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlOutImageMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 
 
 /**

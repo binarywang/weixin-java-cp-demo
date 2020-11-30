@@ -8,8 +8,8 @@ import com.github.binarywang.demo.wx.cp.builder.TextBuilder;
 import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.cp.api.WxCpService;
-import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
-import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 
 /**
  * 通讯录变更事件处理器.

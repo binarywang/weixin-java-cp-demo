@@ -1,5 +1,7 @@
 package com.github.binarywang.demo.wx.cp.controller;
 
+import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
+import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.binarywang.demo.wx.cp.config.WxCpConfiguration;
 import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
 import me.chanjar.weixin.cp.api.WxCpService;
-import me.chanjar.weixin.cp.bean.WxCpXmlMessage;
-import me.chanjar.weixin.cp.bean.WxCpXmlOutMessage;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 
 /**
