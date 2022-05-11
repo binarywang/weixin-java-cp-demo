@@ -14,7 +14,7 @@ import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 /**
  * 通讯录变更事件处理器.
  *
- * @author Binary Wang(https://github.com/binarywang)
+ * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @Component
 public class ContactChangeHandler extends AbstractHandler {

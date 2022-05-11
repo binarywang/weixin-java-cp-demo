@@ -7,7 +7,7 @@ import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 
 
 /**
- *  @author Binary Wang(https://github.com/binarywang)
+ *  @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 public class ImageBuilder extends AbstractBuilder {
 

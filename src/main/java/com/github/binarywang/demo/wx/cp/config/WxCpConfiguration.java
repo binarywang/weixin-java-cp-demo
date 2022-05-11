@@ -27,7 +27,7 @@ import me.chanjar.weixin.cp.api.impl.WxCpServiceImpl;
 import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 
 /**
- * @author Binary Wang(https://github.com/binarywang)
+ * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @Configuration
 @EnableConfigurationProperties(WxCpProperties.class)

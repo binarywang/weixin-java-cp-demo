@@ -19,7 +19,7 @@ import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 
 /**
- * @author Binary Wang(https://github.com/binarywang)
+ * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @RestController
 @RequestMapping("/wx/cp/portal/{agentId}")
