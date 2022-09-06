@@ -12,4 +12,5 @@ public class WxCpDemoApplication {
   public static void main(String[] args) {
     SpringApplication.run(WxCpDemoApplication.class, args);
   }
+
 }

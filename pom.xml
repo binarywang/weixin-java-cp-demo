@@ -19,12 +19,14 @@
 
     <properties>
         <weixin-java-cp.version>4.4.0</weixin-java-cp.version>
-
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.locales>zh_CN</project.build.locales>
+
+        <spring-redis-version>2.2.4.RELEASE</spring-redis-version>
+        <redisson-version>3.10.6</redisson-version>
     </properties>
 
     <dependencies>
@@ -59,6 +61,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring-redis-version}</version>
+        </dependency>
+
+        <!-- redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redisson-version}</version>
         </dependency>
 
     </dependencies>
