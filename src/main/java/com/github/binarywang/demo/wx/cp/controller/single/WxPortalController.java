@@ -1,28 +1,21 @@
-package com.github.binarywang.demo.wx.cp.controller;
+package com.github.binarywang.demo.wx.cp.controller.single;
 
+import com.github.binarywang.demo.wx.cp.config.single.WxCpConfiguration;
+import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
+import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
+import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.github.binarywang.demo.wx.cp.config.WxCpConfiguration;
-import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
-import me.chanjar.weixin.cp.api.WxCpService;
-import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
-@RestController
-@RequestMapping("/wx/cp/portal/{agentId}")
+//@RestController
+//@RequestMapping("/wx/cp/portal/{agentId}")
 public class WxPortalController {
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

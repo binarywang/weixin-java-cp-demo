@@ -1,36 +1,27 @@
-package com.github.binarywang.demo.wx.cp.config;
+package com.github.binarywang.demo.wx.cp.config.single;
 
-import java.util.Map;
-import java.util.stream.Collectors;
-import javax.annotation.PostConstruct;
-
-import me.chanjar.weixin.cp.config.impl.WxCpDefaultConfigImpl;
-import me.chanjar.weixin.cp.constant.WxCpConsts;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-
-import com.github.binarywang.demo.wx.cp.handler.ContactChangeHandler;
-import com.github.binarywang.demo.wx.cp.handler.EnterAgentHandler;
-import com.github.binarywang.demo.wx.cp.handler.LocationHandler;
-import com.github.binarywang.demo.wx.cp.handler.LogHandler;
-import com.github.binarywang.demo.wx.cp.handler.MenuHandler;
-import com.github.binarywang.demo.wx.cp.handler.MsgHandler;
-import com.github.binarywang.demo.wx.cp.handler.NullHandler;
-import com.github.binarywang.demo.wx.cp.handler.SubscribeHandler;
-import com.github.binarywang.demo.wx.cp.handler.UnsubscribeHandler;
+import com.github.binarywang.demo.wx.cp.handler.*;
 import com.google.common.collect.Maps;
 import lombok.val;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.api.impl.WxCpServiceImpl;
+import me.chanjar.weixin.cp.config.impl.WxCpDefaultConfigImpl;
+import me.chanjar.weixin.cp.constant.WxCpConsts;
 import me.chanjar.weixin.cp.message.WxCpMessageRouter;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.PostConstruct;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
+ * 单实例配置
+ *
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
-@Configuration
-@EnableConfigurationProperties(WxCpProperties.class)
+//@Configuration
+//@EnableConfigurationProperties(WxCpProperties.class)
 public class WxCpConfiguration {
     private LogHandler logHandler;
     private NullHandler nullHandler;
@@ -132,4 +123,5 @@ public class WxCpConfiguration {
 
         return newRouter;
     }
+
 }

@@ -1,19 +1,17 @@
-package com.github.binarywang.demo.wx.cp.config;
-
-import java.util.List;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
+package com.github.binarywang.demo.wx.cp.config.single;
 
 import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 /**
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
-@Getter
-@Setter
-@ConfigurationProperties(prefix = "wechat.cp")
+@Data
+//@ConfigurationProperties(prefix = "wechat.cp")
 public class WxCpProperties {
   /**
    * 设置企业微信的corpId
@@ -51,4 +49,5 @@ public class WxCpProperties {
   public String toString() {
     return JsonUtils.toJson(this);
   }
+
 }

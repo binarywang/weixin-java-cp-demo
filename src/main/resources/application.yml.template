@@ -1,8 +1,33 @@
+server:
+  port: 8000
 logging:
   level:
     org.springframework.web: INFO
     com.github.binarywang.demo.wx.cp: DEBUG
     me.chanjar.weixin: DEBUG
+
+#多实例配置
+spring:
+  redis:
+    database: 0
+    host: xx.xx.xx.xx
+    password: xxxx
+    port: 6380
+wechat:
+  cp:
+    appConfigs:
+      - agentId: 1000001
+        corpId: xxxx
+        secret: 1111
+        token: 111
+        aesKey: 111
+      - agentId: 1000002
+        corpId: xxxx
+        secret: 1111
+        token: 111
+        aesKey: 111
+
+#单实例配置
 wechat:
   cp:
     corpId: 111
@@ -15,5 +40,3 @@ wechat:
         secret: 1111
         token: 111
         aesKey: 111
-server:
-  port: 8000
