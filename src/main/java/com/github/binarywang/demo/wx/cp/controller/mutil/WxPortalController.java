@@ -25,17 +25,17 @@ import java.util.List;
 @RequestMapping("/wx/cp/portal/{corpId}/{agentId}")
 public class WxPortalController {
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
   private final StringRedisTemplate stringRedisTemplate;
 
   @PostMapping("/test")
-  public String test(@PathVariable String corpId) throws WxErrorException {
+  public String test(@PathVariable String corpId,
+                     @RequestParam(name = "userId", required = true) String userId) throws WxErrorException {
 
     String s = stringRedisTemplate.opsForValue().get("test");
     logger.info("data is {}", s);
 
     final val wxCpService = WxCpConfiguration.getCpService(corpId,10001);
-    List<String> list = wxCpService.getExternalContactService().listExternalContacts("xxx");
+    List<String> list = wxCpService.getExternalContactService().listExternalContacts(userId);
 
     return list.toString();
   }

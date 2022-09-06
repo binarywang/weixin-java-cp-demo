@@ -2,6 +2,7 @@ package com.github.binarywang.demo.wx.cp.config.mutil;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
+import org.redisson.client.codec.StringCodec;
 import org.redisson.config.Config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +34,8 @@ public class RedissonConfig {
         config.useSingleServer().setPassword(this.password);
         config.useSingleServer().setDatabase(this.database);
 
+        StringCodec codec = new StringCodec();
+        config.setCodec(codec);
         return Redisson.create(config);
     }
 
