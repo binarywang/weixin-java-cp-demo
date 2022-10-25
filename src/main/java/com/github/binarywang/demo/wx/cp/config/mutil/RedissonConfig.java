@@ -31,7 +31,9 @@ public class RedissonConfig {
 
         Config config = new Config();
         config.useSingleServer().setAddress(String.format("redis://%s:%s", this.host, this.port));
-        config.useSingleServer().setPassword(this.password);
+        if (!this.password.isEmpty()) {
+            config.useSingleServer().setPassword(this.password);
+        }
         config.useSingleServer().setDatabase(this.database);
 
         StringCodec codec = new StringCodec();
