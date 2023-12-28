@@ -19,7 +19,7 @@ public class UnsubscribeHandler extends AbstractHandler {
   public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage, Map<String, Object> context, WxCpService cpService,
                                   WxSessionManager sessionManager) {
     String openId = wxMessage.getFromUserName();
-    this.logger.info("取消关注用户 OPENID: " + openId);
+    log.info("取消关注用户 OPENID: " + openId);
     // TODO 可以更新本地数据库为取消关注状态
     return null;
   }

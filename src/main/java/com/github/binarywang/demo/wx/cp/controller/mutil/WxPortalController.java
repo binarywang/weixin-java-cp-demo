@@ -47,7 +47,7 @@ public class WxPortalController {
                         @RequestParam(name = "timestamp", required = false) String timestamp,
                         @RequestParam(name = "nonce", required = false) String nonce,
                         @RequestParam(name = "echostr", required = false) String echostr) {
-    this.logger.info("\n接收到来自微信服务器的认证消息：signature = [{}], timestamp = [{}], nonce = [{}], echostr = [{}]",
+    log.info("\n接收到来自微信服务器的认证消息：signature = [{}], timestamp = [{}], nonce = [{}], echostr = [{}]",
         signature, timestamp, nonce, echostr);
 
     if (StringUtils.isAnyBlank(signature, timestamp, nonce, echostr)) {
@@ -73,7 +73,7 @@ public class WxPortalController {
                      @RequestParam("msg_signature") String signature,
                      @RequestParam("timestamp") String timestamp,
                      @RequestParam("nonce") String nonce) {
-    this.logger.info("\n接收微信请求：[signature=[{}], timestamp=[{}], nonce=[{}], requestBody=[\n{}\n] ",
+    log.info("\n接收微信请求：[signature=[{}], timestamp=[{}], nonce=[{}], requestBody=[\n{}\n] ",
         signature, timestamp, nonce, requestBody);
 
     final WxCpService wxCpService = WxCpConfiguration.getCpService(corpId, agentId);
@@ -83,14 +83,14 @@ public class WxPortalController {
 
     WxCpXmlMessage inMessage = WxCpXmlMessage.fromEncryptedXml(requestBody, wxCpService.getWxCpConfigStorage(),
         timestamp, nonce, signature);
-    this.logger.debug("\n消息解密后内容为：\n{} ", JsonUtils.toJson(inMessage));
+    log.debug("\n消息解密后内容为：\n{} ", JsonUtils.toJson(inMessage));
       WxCpXmlOutMessage outMessage = this.route(corpId, agentId, inMessage);
     if (outMessage == null) {
       return "";
     }
 
     String out = outMessage.toEncryptedXml(wxCpService.getWxCpConfigStorage());
-    this.logger.debug("\n组装回复信息：{}", out);
+    log.debug("\n组装回复信息：{}", out);
     return out;
   }
 
@@ -98,7 +98,7 @@ public class WxPortalController {
     try {
         return WxCpConfiguration.getRouters().get(corpId + agentId).route(message);
     } catch (Exception e) {
-      this.logger.error(e.getMessage(), e);
+      log.error(e.getMessage(), e);
     }
 
     return null;

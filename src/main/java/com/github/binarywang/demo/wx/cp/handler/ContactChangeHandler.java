@@ -23,7 +23,7 @@ public class ContactChangeHandler extends AbstractHandler {
   public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage, Map<String, Object> context, WxCpService cpService,
                                   WxSessionManager sessionManager) {
     String content = "收到通讯录变更事件，内容：" + JsonUtils.toJson(wxMessage);
-    this.logger.info(content);
+    log.info(content);
 
     return new TextBuilder().build(content, wxMessage, cpService);
   }

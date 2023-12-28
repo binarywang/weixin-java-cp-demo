@@ -22,7 +22,7 @@ public class SubscribeHandler extends AbstractHandler {
   public WxCpXmlOutMessage handle(WxCpXmlMessage wxMessage, Map<String, Object> context, WxCpService cpService,
                                   WxSessionManager sessionManager) throws WxErrorException {
 
-    this.logger.info("新关注用户 OPENID: " + wxMessage.getFromUserName());
+    log.info("新关注用户 OPENID: " + wxMessage.getFromUserName());
 
     // 获取微信用户基本信息
     WxCpUser userWxInfo = cpService.getUserService().getById(wxMessage.getFromUserName());
@@ -35,7 +35,7 @@ public class SubscribeHandler extends AbstractHandler {
     try {
       responseResult = handleSpecial(wxMessage);
     } catch (Exception e) {
-      this.logger.error(e.getMessage(), e);
+      log.error(e.getMessage(), e);
     }
 
     if (responseResult != null) {
@@ -45,7 +45,7 @@ public class SubscribeHandler extends AbstractHandler {
     try {
       return new TextBuilder().build("感谢关注", wxMessage, cpService);
     } catch (Exception e) {
-      this.logger.error(e.getMessage(), e);
+      log.error(e.getMessage(), e);
     }
 
     return null;
