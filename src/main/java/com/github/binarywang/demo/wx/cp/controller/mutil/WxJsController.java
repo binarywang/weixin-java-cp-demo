@@ -22,7 +22,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @RequestMapping("/wx/cp/js/{corpId}/{agentId}")
 public class WxJsController {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final StringRedisTemplate stringRedisTemplate;
 
     @PostMapping("/getJsConf")

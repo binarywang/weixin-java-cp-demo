@@ -2,6 +2,7 @@ package com.github.binarywang.demo.wx.cp.controller.single;
 
 import com.github.binarywang.demo.wx.cp.config.single.WxCpConfiguration;
 import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
+import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
@@ -16,9 +17,8 @@ import org.springframework.web.bind.annotation.*;
  */
 //@RestController
 //@RequestMapping("/wx/cp/portal/{agentId}")
+@Slf4j
 public class WxPortalController {
-  private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
   @GetMapping(produces = "text/plain;charset=utf-8")
   public String authGet(@PathVariable Integer agentId,
                         @RequestParam(name = "msg_signature", required = false) String signature,

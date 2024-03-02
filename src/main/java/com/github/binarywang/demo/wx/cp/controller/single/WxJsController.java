@@ -21,8 +21,6 @@ import java.util.Map;
 //@RequestMapping("/wx/cp/js/{corpId}/{agentId}/getJsConf")
 
 public class WxJsController {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
     @PostMapping("/getJsConf")
     public Map getJsConf(
             @PathVariable String corpId,
