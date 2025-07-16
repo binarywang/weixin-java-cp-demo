@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-cp</artifactId>
-            <version>${weixin-java-cp.version}</version>
+            <version>4.7.5-20250529.111829</version>
         </dependency>
 
         <dependency>
@@ -67,14 +67,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-            <version>${spring-redis-version}</version>
+            <version>3.0.8</version>
         </dependency>
 
         <!-- redisson -->
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>${redisson-version}</version>
+            <version>3.45.0</version>
         </dependency>
 
     </dependencies>
